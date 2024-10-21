@@ -109,6 +109,13 @@ instance HasEndpoint (sub :: Type) => HasEndpoint (Fragment a :> sub) where
   enumerateEndpoints _ = enumerateEndpoints (Proxy :: Proxy sub)
 #endif
 
+#if MIN_VERSION_servant(0,20,0)
+instance HasEndpoint (sub :: Type) => HasEndpoint (WithResource a :> sub) where
+  getEndpoint _ = getEndpoint (Proxy :: Proxy sub)
+
+  enumerateEndpoints _ = enumerateEndpoints (Proxy :: Proxy sub)
+#endif
+
 instance
   HasEndpoint (sub :: Type)
   => HasEndpoint (QueryParam' mods (h :: Symbol) a :> sub)
