@@ -20,6 +20,7 @@ tested-with:
   - GHC == 9.2.8
   - GHC == 9.4.7
   - GHC == 9.4.8
+  - GHC == 9.6.5
 
 verbatim:
   cabal-version: 2.4
@@ -71,17 +72,17 @@ ghc-options:
   - -Wno-implicit-prelude
 
 dependencies:
-  - base >=4.10 && < 4.18
+  - base >=4.10 && < 4.21
 
 library:
   source-dirs: lib
   dependencies:
     - clock >= 0.8.3 && < 0.9
-    - ghc-prim >= 0.8.0 && < 0.10
+    - ghc-prim >= 0.8.0 && < 0.12
     - hashable >= 1.4.2 && < 1.5
     - http-types >= 0.12.3 && < 0.13
     - prometheus-client >= 1.1.0 && < 1.2
-    - servant >= 0.14 && < 0.20
+    - servant >= 0.14 && < 0.21
     - text >= 1.2.5 && < 2.1
     - wai >= 3.2.3 && < 3.3
 
@@ -104,8 +105,8 @@ tests:
       - http-client >= 0.7.13 && < 0.8
       - prometheus-client
       - servant
-      - servant-client >= 0.14 && < 0.20
-      - servant-server >= 0.14 && < 0.20
+      - servant-client >= 0.14 && < 0.21
+      - servant-server >= 0.14 && < 0.21
       - text
       - wai
       - warp >= 3.2.4 && < 3.4

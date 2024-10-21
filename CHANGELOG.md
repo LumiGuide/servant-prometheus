@@ -1,6 +1,7 @@
 Unreleased
 ==========
 
+- Add an `HasEndpoint` instance for `WithResource`
 
 1.2.0
 =======
